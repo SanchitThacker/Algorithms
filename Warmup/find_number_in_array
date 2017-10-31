@@ -1,0 +1,29 @@
+//wap to enter a array size then neter the array elements and finally aska to enter a no to be searched in the array and fgin weather it is present or not , if yes telll the location .
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,arr[10],flag=0;
+	cin>>n;
+	cout<<"Enter the elements of the array";
+	for(int i=0;i<n;i++)
+	{
+		cin>>arr[i];
+	}
+	int val;
+	cout<<endl<<"Enter the element to be searched"<<endl;
+	cin>>val;
+	
+	int i;
+	for( i=0;i<n;i++)
+	{
+		if(arr[i]==val)
+		{flag=1;
+		break; }
+	}
+	if(flag==0)
+	cout<<"Element not found"<<endl;
+	else
+	cout<<"The element was found at position "<<i+1<<endl;
+	return 0;
+	}
