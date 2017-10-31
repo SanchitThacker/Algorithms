@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+class node
+{
+	public:
+		int data;
+		node *ptr;
+		node *temp,*start=NULL;
+		void create_node(int val)
+		{
+			node *head;
+			head=new node();
+			head->data=val;
+			head->ptr=NULL;
+			if(start==NULL)
+			{
+				start=head;
+			}
+			else
+			{
+				temp=start;
+				start=head;
+				head->ptr=temp;
+			}
+		}
+		void insert()
+		{
+			int n,num;
+			cin>>n;
+			for(int i=0;i<n;i++)
+			{
+				cin>>num;
+				create_node(num);
+			}
+		}
+		void display()
+		{
+			while(start!=NULL)
+			{
+				cout<<start->data<<" ";
+				start=start->ptr;
+			}
+		}
+};
+int main()
+{
+	node n;
+	n.insert();
+	n.display();
+}
